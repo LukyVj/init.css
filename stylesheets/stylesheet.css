@@ -69,7 +69,8 @@ header {
   padding-top: 40px;
   padding-bottom: 40px;
   font-family: 'Coda', 'Helvetica Neue', Helvetica, Arial, serif; 
-  background: #2e7bcf url(http://24.media.tumblr.com/d2eeeb78c5252a1d442e40948fe4eb44/tumblr_mw87ovKSuV1sfie3io1_1280.jpg) 0 0 repeat-x;
+  background: #2e7bcf url(http://24.media.tumblr.com/d2eeeb78c5252a1d442e40948fe4eb44/tumblr_mw87ovKSuV1sfie3io1_1280.jpg) 0 0 no-repeat center center;
+  background-size:cover;
   border-bottom: solid 1px #275da1;
 }
 
