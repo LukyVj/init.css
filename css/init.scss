@@ -1,0 +1,300 @@
+/*
+# init.css
+*/
+
+/* Main */
+$c-1:#333;
+$c-2:#eff0f2; 
+$c-3:lighten($c-1,25%);
+$notwhite:true;
+
+/* The theme, is the color of the background and some colors  */
+$theme-1:true;
+$theme-2:false;
+$theme-3:false;
+$theme-4:false;
+$tst:attr(data-url);
+@if($theme-1==true){$c-1:#333;}
+@if($theme-2==true){$c-1:#2980b9;
+$c-3:darken($c-1,15%);
+}
+@if($theme-3==true){$c-1:#27ae60;
+$c-3:darken($c-1,15%);
+} 
+@if($theme-4==true){
+  $c-1:#c0392b;
+$c-3:darken($c-1,15%);
+}
+ 
+@mixin reset {
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0;
+}
+
+@mixin high{
+  -webkit-font-smoothing:antialiased;
+  @include box-sizing(border-box);
+  @include appearance(none);
+}
+
+
+*{
+  @include high();
+}
+html,body{
+  @include reset();
+}
+
+*:before,
+*:after{ 
+  content:'';
+  display:block;
+  float:left;
+} 
+body{
+  background:$c-2;
+  overflow-x:hidden;
+  position:absolute;
+  z-index:10; 
+  *{  
+    @include high();
+    &::selection{
+      background:$c-1;
+      color:$c-2;
+    }
+  }
+  &:before{ // Header
+    width:100%;
+    height:12em;
+    background:$c-1;
+    position:absolute;
+    z-index:-1;
+    float:left;
+    top:0;
+    &::selection{
+      background:$c-2;
+      color:$c-1;
+    }
+  }
+  //alternative header  
+  h1 + img{
+    height:77vw; 
+    width:auto;
+    background:$c-1;
+    position:absolute;
+    z-index:-1;
+    float:left;
+    top:0;
+    opacity:.9;  
+    margin:-1em;
+    //top:(-10 * 5vw) ;
+  }
+   
+  h1 + img ~ p:nth-of-type(1),
+  h1 + img ~ h1:first-of-type{
+    //color:red !important;
+    background:$c-2;
+    &:before,&:after{
+    content:'';
+    display:block;
+    float:left;
+    height:6em;
+    width:100%;
+    position:absolute;
+    background:$c-2;
+    margin:-5.85em -1em;
+    z-index:-1;
+    }
+  &:after{
+    margin:0em -1em;
+    height:100em ;
+    }
+  } 
+  
+  
+  &:after{//Footer
+    width:100%;
+    height:2em;
+    background:$c-1;
+    position:fixed;
+    margin-bottom:-.15em;
+    border-top:.1em solid $c-2;
+    z-index:0; 
+    float:left;
+    bottom:0;
+    clear:both;
+    margin-top:4em;
+  }
+  
+  > h1:first-child{
+    color:$c-2;
+    text-align:center;
+    line-height:3;
+    font-size:3em;
+    font-family:Georgia,Cambria,"Times New Roman",Times,serif;
+    text-transform:uppercase;
+    letter-spacing:.085em;
+  }
+  > h2:last-of-type{
+    color:$c-2;
+    text-align:center;
+    font-size:.9em;
+    font-family:Georgia,Cambria,"Times New Roman",Times,serif;
+    text-transform:uppercase;
+    letter-spacing:.085em;
+    position:fixed;
+    line-height:0;
+    margin-top:-39.3em;
+    display:block;
+    z-index:9;
+    width:100%; 
+  }
+  > h1:not(:first-child){
+    color:$c-1;
+    line-height:3;
+    font-size:2em;
+    padding:0 .6em;
+    margin:1.5em 0 -1em;
+    font-family:Georgia,Cambria,"Times New Roman",Times,serif;
+    text-transform:Capitalize;
+     clear:both; 
+}
+  h1 + p{
+    font-family:Georgia,Cambria,"Times New Roman",Times,serif;
+    letter-spacing: .01rem;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.375em;
+    line-height: 1.5;
+    padding:.4em 1em;
+    color:$c-1;  
+  } 
+  
+  p,a{
+    font-family:Georgia,Cambria,"Times New Roman",Times,serif;
+    letter-spacing: .01rem;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.15em;
+    line-height:24px;
+    padding:.4em 1.8em;
+    color:$c-1;  
+
+  }
+  a{
+    padding:.4em 1.5218em ;
+    @include box-shadow(0 0 0 .1em $c-3);
+    margin-left:.86em;
+    margin-top:1em;
+    color:$c-3; 
+    display:block;
+    float:left;
+    &:last-child{
+     clear:both; 
+      
+    }
+  } 
+  p{ 
+    &> a{ //Inline <a> tags (in a chain of text, so not a button)
+      color:$c-3;
+      @include box-shadow(0 0 0);
+      padding:0;
+      margin:0;
+      /**/ 
+      display:inline;
+      float:inherit; 
+      clear:inherit; 
+    }
+  }
+  /* Quote */
+  blockquote{
+    line-height: 1.4;
+    text-align: center;
+    font-size: 1.8em;
+    margin: .5em 0;
+    border: 0;
+    padding: 0;
+    font-family: Georgia,Cambria,"Times New Roman",Times,serif;
+    letter-spacing: .01rem;
+    font-weight: 400;
+    font-style: italic;
+    padding:0 .5em;
+    padding-bottom: 3px;
+    text-align:center;
+    
+    color:lighten($c-1,25%);
+    /* &:before,&:after{
+    content:'"';
+    float:left;
+  }*/
+  }
+  
+  img{
+    display:block;
+    width:100%;
+    padding:1em;
+    &+img{
+      width:50%;
+      float:left;
+    }
+    &+ img + img + img{
+      width:25%;
+      float:left;
+    }
+  }
+  
+  //End (I plan to maybe add margin at the end.. ) 
+  *::last-of-type{
+    
+  }
+}
+
+@media all and (max-width:40em){
+  body{
+    overflow-x:hidden;
+    font-size:.785em;
+     &:before{ // Header
+    height:6em; 
+    }
+     > h1:first-child{
+    line-height:.5;
+  }
+    
+    p{  
+      
+      text-align:justify;
+       &>a{
+      display:inline;
+      width:auto;
+      float:inherit;
+      text-align:inherit;
+      }
+    }
+          a{width:93% ;display:block;float:left;text-align:center} 
+
+      img{
+        display:block;
+        width:100%;
+        padding:1em;
+        &+img{
+          width:50%;
+          float:left;
+        }
+        &+ img + img + img{
+          width:50% ;
+          float:left; 
+        }
+      }
+    }
+  }
+
+
+
+// I just tried some things.. keep it or not.. I said with true/false if the background is white or not. If it is, set the value to true, and you'll (maybe) get a better experience of reading due to the text-shadow. 
+@if($notwhite==true){
+  p,h1:not(:first-child), blockquote{
+  text-shadow:0 -.05em 0 white;
+} 
+}  
