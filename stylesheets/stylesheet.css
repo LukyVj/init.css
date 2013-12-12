@@ -2,6 +2,8 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url(http://fonts.googleapis.com/css?family=Coda);
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -66,8 +68,8 @@ a:hover {
 header {
   padding-top: 40px;
   padding-bottom: 40px;
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
-  background: #2e7bcf url(../images/header-bg.jpg) 0 0 repeat-x;
+  font-family: 'Coda', 'Helvetica Neue', Helvetica, Arial, serif; 
+  background: #2e7bcf url(http://24.media.tumblr.com/d2eeeb78c5252a1d442e40948fe4eb44/tumblr_mw87ovKSuV1sfie3io1_1280.jpgg) 0 0 repeat-x;
   border-bottom: solid 1px #275da1;
 }
 
