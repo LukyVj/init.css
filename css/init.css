@@ -1,0 +1,264 @@
+/*
+# init.css
+*/
+/* Main */
+/* The theme, is the color of the background and some colors  */
+* {
+  -webkit-font-smoothing: antialiased;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+*:before,
+*:after {
+  content: '';
+  display: block;
+  float: left;
+}
+
+body {
+  background: #eff0f2;
+  overflow-x: hidden;
+  position: absolute;
+  z-index: 10;
+  /* Quote */
+}
+body * {
+  -webkit-font-smoothing: antialiased;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+body *::selection {
+  background: #333333;
+  color: #eff0f2;
+}
+body:before {
+  width: 100%;
+  height: 12em;
+  background: #333333;
+  position: absolute;
+  z-index: -1;
+  float: left;
+  top: 0;
+}
+body:before::selection {
+  background: #eff0f2;
+  color: #333333;
+}
+body h1 + img {
+  height: 77vw;
+  width: auto;
+  background: #333333;
+  position: absolute;
+  z-index: -1;
+  float: left;
+  top: 0;
+  opacity: .9;
+  margin: -1em;
+}
+body h1 + img ~ p:nth-of-type(1),
+body h1 + img ~ h1:first-of-type {
+  background: #eff0f2;
+}
+body h1 + img ~ p:nth-of-type(1):before, body h1 + img ~ p:nth-of-type(1):after,
+body h1 + img ~ h1:first-of-type:before,
+body h1 + img ~ h1:first-of-type:after {
+  content: '';
+  display: block;
+  float: left;
+  height: 6em;
+  width: 100%;
+  position: absolute;
+  background: #eff0f2;
+  margin: -5.85em -1em;
+  z-index: -1;
+}
+body h1 + img ~ p:nth-of-type(1):after,
+body h1 + img ~ h1:first-of-type:after {
+  margin: 0em -1em;
+  height: 100em;
+}
+body:after {
+  width: 100%;
+  height: 2em;
+  background: #333333;
+  position: fixed;
+  margin-bottom: -.15em;
+  border-top: 0.1em solid #eff0f2;
+  z-index: 0;
+  float: left;
+  bottom: 0;
+  clear: both;
+  margin-top: 4em;
+}
+body > h1:first-child {
+  color: #eff0f2;
+  text-align: center;
+  line-height: 3;
+  font-size: 3em;
+  font-family: Georgia,Cambria,"Times New Roman",Times,serif;
+  text-transform: uppercase;
+  letter-spacing: .085em;
+}
+body > h2:last-of-type {
+  color: #eff0f2;
+  text-align: center;
+  font-size: .9em;
+  font-family: Georgia,Cambria,"Times New Roman",Times,serif;
+  text-transform: uppercase;
+  letter-spacing: .085em;
+  position: fixed;
+  line-height: 0;
+  margin-top: -39.3em;
+  display: block;
+  z-index: 9;
+  width: 100%;
+}
+body > h1:not(:first-child) {
+  color: #333333;
+  line-height: 3;
+  font-size: 2em;
+  padding: 0 .6em;
+  margin: 1.5em 0 -1em;
+  font-family: Georgia,Cambria,"Times New Roman",Times,serif;
+  text-transform: Capitalize;
+  clear: both;
+}
+body h1 + p {
+  font-family: Georgia,Cambria,"Times New Roman",Times,serif;
+  letter-spacing: .01rem;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.375em;
+  line-height: 1.5;
+  padding: .4em 1em;
+  color: #333333;
+}
+body p, body a {
+  font-family: Georgia,Cambria,"Times New Roman",Times,serif;
+  letter-spacing: .01rem;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.15em;
+  line-height: 24px;
+  padding: .4em 1.8em;
+  color: #333333;
+}
+body a {
+  padding: 0.4em 1.5218em;
+  box-shadow: 0 0 0 0.1em #737373;
+  margin-left: .86em;
+  margin-top: 1em;
+  color: #737373;
+  display: block;
+  float: left;
+}
+body a:last-child {
+  clear: both;
+}
+body p > a {
+  color: #737373;
+  box-shadow: 0 0 0;
+  padding: 0;
+  margin: 0;
+  /**/
+  display: inline;
+  float: inherit;
+  clear: inherit;
+}
+body blockquote {
+  line-height: 1.4;
+  text-align: center;
+  font-size: 1.8em;
+  margin: .5em 0;
+  border: 0;
+  padding: 0;
+  font-family: Georgia,Cambria,"Times New Roman",Times,serif;
+  letter-spacing: .01rem;
+  font-weight: 400;
+  font-style: italic;
+  padding: 0 .5em;
+  padding-bottom: 3px;
+  text-align: center;
+  color: #737373;
+  /* &:before,&:after{
+  content:'"';
+  float:left;
+}*/
+}
+body img {
+  display: block;
+  width: 100%;
+  padding: 1em;
+}
+body img + img {
+  width: 50%;
+  float: left;
+}
+body img + img + img + img {
+  width: 25%;
+  float: left;
+}
+
+@media all and (max-width: 40em) {
+  body {
+    overflow-x: hidden;
+    font-size: .785em;
+  }
+  body:before {
+    height: 6em;
+  }
+  body > h1:first-child {
+    line-height: .5;
+  }
+  body p {
+    text-align: justify;
+  }
+  body p > a {
+    display: inline;
+    width: auto;
+    float: inherit;
+    text-align: inherit;
+  }
+  body a {
+    width: 93%;
+    display: block;
+    float: left;
+    text-align: center;
+  }
+  body img {
+    display: block;
+    width: 100%;
+    padding: 1em;
+  }
+  body img + img {
+    width: 50%;
+    float: left;
+  }
+  body img + img + img + img {
+    width: 50%;
+    float: left;
+  }
+}
+p, h1:not(:first-child), blockquote {
+  text-shadow: 0 -.05em 0 white;
+}
